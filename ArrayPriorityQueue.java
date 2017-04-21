@@ -11,18 +11,18 @@ HIGHEST VALUE =====> LOWEST VALUE
 
 import java.util.ArrayList; 
 
-public class ArrayPriorityQueue implements PriorityQueue { 
+public class ArrayPriorityQueue implements PriorityQueue<Ticket> { 
 
-    private ArrayList<Integer> _data; 
+    private ArrayList<Ticket> _data; 
 
     public ArrayPriorityQueue() { 
-	_data = new ArrayList<Integer>(); 
+	_data = new ArrayList<Ticket>(); 
     } 
     
-    public void add (int x) { 
+    public void add (Ticket x) { 
 	boolean isAdded = false; 
 	for (int i = 0; i < _data.size(); i++) { 
-	    if (x >= _data.get(i)) { 
+	    if (x.compareTo(_data.get(i)) > 0) { 
 		_data.add(i, x);
 		isAdded = true; 
 		break; 
@@ -35,25 +35,26 @@ public class ArrayPriorityQueue implements PriorityQueue {
 	return _data.size() == 0; 
     } 
     
-    public int peekMin() { 
+    public Ticket peekMin() { 
 	return _data.get(_data.size()-1); 
     } 
 
-    public int removeMin() { 
+    public Ticket removeMin() { 
 	return _data.remove(_data.size()-1);
     } 
     
     public String toString() { 
 	String retStr = "LAST <--"; 
-	for (int i: _data) { 
+	for (Ticket i: _data) { 
 	    retStr += " " + i; 
 	} 
 	retStr += " --> FIRST"; 
 	return retStr; 
     } 
 
-    public static void main (String[] args) { 
-        PriorityQueue a = new ArrayPriorityQueue(); 
+    public static void main (String[] args) {
+	//DOES NOT WORK FOR TICKETS YET
+        PriorityQueue a = new ArrayPriorityQueue();
 	a.add(10); 
 	System.out.println(a); 
 	a.add(5); 
