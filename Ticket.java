@@ -5,22 +5,20 @@
 
 public class Ticket implements Comparable {
 
-    private int _priority;
-    private String _problem;
     private String _name;
     private int _id;
-    private boolean _resolved;
+    private int _priority;
+    private String _problem;
     private String _solution;
+    private boolean _resolved;
 
-    public Ticket() {
-	_priority = 0;
-    }
-
-    public Ticket( int priority, String problem, String name, int id ) {
-	_priority = priority;
-	_problem = problem;
+    public Ticket( String name, int id, int priority, String problem ) {
 	_name = name;
 	_id = id;
+	_priority = priority;
+	_problem = problem;
+	_solution = "";
+	_resolved = false;
     }
 
     // ACCESSORS ============================================
