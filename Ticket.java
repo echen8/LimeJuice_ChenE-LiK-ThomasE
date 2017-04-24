@@ -3,7 +3,7 @@
 // lab03
 // 2017-04-21
 
-public class Ticket implements Comparable {
+public class Ticket implements Comparable<Ticket> {
 
     private String _name;
     private int _id;
@@ -86,8 +86,7 @@ public class Ticket implements Comparable {
 	return retStr;
     }
 
-    public int compareTo( Object o ) {
-	Ticket t = (Ticket)o;
+    public int compareTo( Ticket t ) {
 	if ( _priority > t.getPriority() ) return 1;
 	else if ( _priority == t.getPriority() ) return 0;
 	else return -1;
