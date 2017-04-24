@@ -6,7 +6,7 @@
 <li> <b> COMPLETED </b> One teammate: create a Git repo, named as you please. </li>
 <li> <b> COMPLETED </b> Same teammate: add teammates as collaborators with write access. </li>
 <li> <b> COMPLETED </b> All teammates: consult the Java API entries for interface PriorityQueue and class ArrayPriorityQueue. </li>
-<li> Collaboratively design your helpdesk app. Your guiding principles: </li>
+<li> <b> COMPLETED </b> Collaboratively design your helpdesk app. Your guiding principles: </li>
   <ol>
   <li> Simplicity <b> check Design section </b> </li>
   <li> Reliability <b> check Design section </b> </li>
@@ -14,7 +14,7 @@
   </ol>
 <li> <b> COMPLETED </b> Write your own local PriorityQueue interface in accordance with subset API. </li>
 <li> <b> COMPLETED </b> Augment the best of your trio’s ArrayPriorityQueue implementations to accommodate generics. </li>
-<li> Write class Ticket, which will model a helpdesk request as discussed in class. </li>
+<li> <b> COMPLETED </b> Write class Ticket, which will model a helpdesk request as discussed in class. </li>
 <li> Write class HelpDesk, which will have as an instance variable an ArrayPriorityQueue of Tickets. </li>
 <li> Explain in your README.md, in the root of your team’s repo, </li>
   <ol> 
