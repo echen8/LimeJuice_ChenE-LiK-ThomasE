@@ -43,6 +43,9 @@ public class ArrayPriorityQueue<T extends Comparable<T>> implements PriorityQueu
 	return _data.remove(_data.size()-1);
     } 
     
+    public int size() { 
+	return _data.size(); 
+    }
     public String toString() { 
 	String retStr = "LAST <--"; 
 	for (T i: _data) { 

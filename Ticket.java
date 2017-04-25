@@ -5,6 +5,8 @@
 
 public class Ticket implements Comparable<Ticket> {
 
+    // I N S T A N C E   V A R I A B L E S 
+
     private String _name;
     private int _id;
     private int _priority;
@@ -21,7 +23,7 @@ public class Ticket implements Comparable<Ticket> {
 	_resolved = false;
     }
 
-    // ACCESSORS ============================================
+    // ACCESSORS
 
     public int getPriority() {
 	return _priority;

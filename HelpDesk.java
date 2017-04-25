@@ -3,6 +3,8 @@
 // lab03
 // 2017-04-23
 
+import java.util.Scanner; 
+
 public class HelpDesk {
 
     private ArrayPriorityQueue<Ticket> _tickets;
@@ -21,9 +23,13 @@ public class HelpDesk {
 
     // Sets the priority of ticket at index to highest(0).  Returns true if successful, false otherwise.
     public boolean prioritize( int id ) {
-	for ( Ticket t : _tickets ) {
-	    if ( t.getID() == id ) t.setPriority( 0 );
+	ArrayPriorityQueue<Ticket> holder = _tickets;
+	for ( int i = 0; i < holder.size(); i++ ) {
+	    if ( holder.peekMin().getID() == id ) {
+		holder.peekMin().setPriority( 0 );
 	    return true;
+	    } 
+	    else {holder.removeMin();}
 	}
 	return false;
     }
@@ -31,11 +37,16 @@ public class HelpDesk {
     // Resolves the ticket and returns the old solution, if applicable.
     public String solveTicket( int id, String solution ) {
 	String oldSolution = "";
-	for ( Ticket t : _tickets ) {
-	    if ( t.getID() == id ) {
-		oldSolution = t.setSolution( solution );
-		t.setResolved( true );
+	ArrayPriorityQueue<Ticket> holder = _tickets;
+	for ( int i = 0; i < holder.size(); i++ ) {
+	    if ( holder.peekMin().getID() == id ) {
+		oldSolution = holder.peekMin().setSolution( solution );
+		holder.peekMin().setResolved( true );
+		break;
 	    }
+	    else { 
+		holder.removeMin(); 
+	    } 
 	}
 	return oldSolution;
     }
